@@ -1,0 +1,206 @@
+/* styles.css - Estilos separados y simplificados para la hoja de vida */
+
+:root {
+    --bg: #ffffff;
+    --muted: #f5f6f7;
+    --text: #0f1720;
+    --subtle: #6b7280;
+    --accent: #0ea5a4;
+    --card-shadow: 0 6px 18px rgba(15, 23, 32, 0.06);
+    --card-shadow-strong: 0 12px 30px rgba(15, 23, 32, 0.08);
+    --radius: 12px;
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+* {
+    box-sizing: border-box
+    text-decoration: none;
+    color: inherit
+}
+
+/* Reset básico */
+html,
+body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0
+}
+
+a {
+    color: var(--accent)
+}
+
+/* Contenedor principal */
+.page {
+    padding: 3rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: linear-gradient(180deg, transparent, rgba(14, 165, 164, 0.02));
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow)
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(14, 165, 164, 0.12)
+}
+
+.name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem
+}
+
+.tagline {
+    color: var(--subtle);
+    margin-bottom: 0.6rem;
+    font-weight: 500
+}
+
+    
+/* Contact buttons */
+.contact-btns .btn {
+    margin-right: 0.5rem
+}
+
+/* About */
+.about-card {
+    background: var(--muted);
+    padding: 1.25rem;
+    border-radius: 10px
+}
+
+/* Skills */
+.skill-item {
+    margin-bottom: 1rem
+}
+
+.progress {
+    height: 10px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.06)
+}
+
+.progress-bar {
+    border-radius: 8px
+}
+
+/* Utility widths para evitar estilos inline */
+.w-90 {
+    width: 90% !important
+}
+
+.w-85 {
+    width: 85% !important
+}
+
+.w-78 {
+    width: 78% !important
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, rgba(14, 165, 164, 0.2), transparent)
+}
+
+.timeline-item {
+    position: relative;
+    padding: 1rem 1rem 1rem 2.25rem;
+    margin-bottom: 1.25rem;
+    background: var(--bg);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow)
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -36px;
+    top: 1rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(14, 165, 164, 0.06)
+}
+
+/* Projects */
+.project-card {
+    transition: transform .28s ease, box-shadow .28s ease
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--card-shadow-strong)
+}
+
+.project-img {
+    height: 160px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px
+}
+
+/* Card ghost: estilo reutilizable para tarjetas suaves */
+.card-ghost {
+    border-radius: 12px;
+    box-shadow: var(--card-shadow)
+}
+
+/* Footer */
+footer {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    color: var(--subtle)
+}
+
+/* Footer centered layout */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: center;
+}
+.footer-links a {
+    margin: 0 0.4rem;
+    color: var(--subtle);
+}
+
+/* Responsive */
+@media (max-width:767px) {
+    .hero {
+        flex-direction: column;
+        align-items: flex-start
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px
+    }
+}
